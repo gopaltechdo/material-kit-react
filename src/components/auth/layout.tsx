@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import { paths } from '@/paths';
 import { DynamicLogo } from '@/components/core/logo';
+import { color } from '@mui/system';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -15,6 +16,8 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
   return (
     <Box
       sx={{
+        background: 'radial-gradient(50% 50% at 50% 50%, #f5f5f5 0%, #5f5f5f 80%)',
+
         display: { xs: 'flex', lg: 'grid' },
         flexDirection: 'column',
         gridTemplateColumns: '1fr 1fr',
@@ -34,7 +37,7 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
       <Box
         sx={{
           alignItems: 'center',
-          background: 'radial-gradient(50% 50% at 50% 50%, #122647 0%, #090E23 100%)',
+          background: 'radial-gradient(50% 50% at 50% 50%, #5f5f5f 0%, #090E23 100%)',
           color: 'var(--mui-palette-common-white)',
           display: { xs: 'none', lg: 'flex' },
           justifyContent: 'center',
@@ -46,18 +49,19 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
             <Typography color="inherit" sx={{ fontSize: '24px', lineHeight: '32px', textAlign: 'center' }} variant="h1">
               Welcome to{' '}
               <Box component="span" sx={{ color: '#15b79e' }}>
-                Devias Kit
+                <a style={{ color: "#f58400" }}>Social Hardware</a>
+
               </Box>
             </Typography>
             <Typography align="center" variant="subtitle1">
-              A professional template that comes with ready-to-use MUI components.
-            </Typography>
+              Redefining Remote Operations
+              with Next-Gen All-Terrain Robots            </Typography>
           </Stack>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Box
               component="img"
               alt="Widgets"
-              src="/assets/auth-widgets.png"
+              src="/assets/EclipseRobot.webp"
               sx={{ height: 'auto', width: '100%', maxWidth: '600px' }}
             />
           </Box>

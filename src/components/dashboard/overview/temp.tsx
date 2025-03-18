@@ -16,7 +16,7 @@ import type { ApexOptions } from 'apexcharts';
 
 import { Chart } from '@/components/core/chart';
 
-const iconMapping = { Desktop: DesktopIcon, Tablet: DeviceTabletIcon, Phone: PhoneIcon } as Record<string, Icon>;
+const iconMapping = { Modrate: DesktopIcon, High: DeviceTabletIcon, Low: PhoneIcon } as Record<string, Icon>;
 
 export interface TrafficProps {
   chartSeries: number[];
@@ -24,12 +24,12 @@ export interface TrafficProps {
   sx?: SxProps;
 }
 
-export function Traffic({ chartSeries, labels, sx }: TrafficProps): React.JSX.Element {
+export function Temp({ chartSeries, labels, sx }: TrafficProps): React.JSX.Element {
   const chartOptions = useChartOptions(labels);
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Traffic source" />
+      <CardHeader title="Temprature" />
       <CardContent>
         <Stack spacing={2}>
           <Chart height={300} options={chartOptions} series={chartSeries} type="donut" width="100%" />
@@ -40,7 +40,7 @@ export function Traffic({ chartSeries, labels, sx }: TrafficProps): React.JSX.El
 
               return (
                 <Stack key={label} spacing={1} sx={{ alignItems: 'center' }}>
-                  {Icon ? <Icon fontSize="var(--icon-fontSize-lg)" /> : null}
+                  {/* {Icon ? <Icon fontSize="var(--icon-fontSize-lg)" /> : null} */}
                   <Typography variant="h6">{label}</Typography>
                   <Typography color="text.secondary" variant="subtitle2">
                     {item}%
